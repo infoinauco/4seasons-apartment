@@ -1,269 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4SeasonsApartment · Holiday Apartments in Taverne (Ticino)</title>
-  <meta name="description" content="Comfortable apartments in Taverne, just minutes from Lugano. Rated 9.0 on Booking and 5 stars on Airbnb." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root { --orange:#c45c26; --orange-dark:#a34a1c; --dark:#1a1a1a; --gray:#5c5c5c; --light:#f7f5f2; --white:#fff; --border:#e8e4df; }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Inter',system-ui,sans-serif;color:var(--dark);background:var(--white);line-height:1.6}
-    img{max-width:100%;display:block} a{text-decoration:none;color:inherit}
-    .container{width:min(1120px,92%);margin:0 auto}
-    .topbar{background:linear-gradient(90deg,#0f3d3e,#1a5c5e);color:#fff;font-size:.85rem;padding:.5rem 0;text-align:center}
-    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;gap:1rem}
-    .logo{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:1.15rem}
-    .logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--orange),#e07a3d);border-radius:10px;display:grid;place-items:center;color:#fff;font-size:1.2rem}
-    .logo span{display:block;font-size:.75rem;font-weight:500;color:var(--gray)}
-    nav{display:flex;align-items:center;gap:1.5rem}
-    nav a{font-size:.95rem;font-weight:500;color:var(--dark);transition:color .2s}
-    nav a:hover{color:var(--orange)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.7rem 1.4rem;border-radius:8px;font-weight:600;font-size:.95rem;transition:all .2s;border:none;cursor:pointer}
-    .btn-primary{background:var(--orange);color:#fff}.btn-primary:hover{background:var(--orange-dark)}
-    .btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.5);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.1)}
-    .lang{display:flex;gap:.25rem;font-size:.82rem;font-weight:600}
-    .lang a{padding:.25rem .45rem;border-radius:4px;color:var(--gray)}.lang a.active{background:var(--dark);color:#fff}
-    .hero{position:relative;min-height:85vh;display:flex;align-items:center;background:linear-gradient(105deg,rgba(20,20,20,.72) 0%,rgba(20,20,20,.35) 55%,rgba(20,20,20,.2) 100%),url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;color:#fff}
-    .hero-content{max-width:620px;padding:4rem 0}
-    .hero-label{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.9;margin-bottom:1rem}
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.3rem,5vw,3.5rem);line-height:1.15;margin-bottom:1.2rem;font-weight:700}
-    .hero p{font-size:1.15rem;opacity:.92;margin-bottom:2rem;max-width:520px}
-    .hero-buttons{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:1.8rem}
-    .hero-tags{display:flex;flex-wrap:wrap;gap:.6rem}
-    .tag{background:rgba(255,255,255,.15);backdrop-filter:blur(6px);padding:.35rem .85rem;border-radius:999px;font-size:.85rem}
-    .scores{background:var(--light);border-bottom:1px solid var(--border);padding:1.5rem 0}
-    .scores-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2.5rem}
-    .score-item{display:flex;align-items:center;gap:.9rem}
-    .score-badge{background:var(--orange);color:#fff;font-weight:700;font-size:1.3rem;width:54px;height:54px;border-radius:12px;display:grid;place-items:center}
-    .score-badge.airbnb{background:#ff5a5f}
-    .score-text strong{display:block;font-size:1.05rem}.score-text span{font-size:.9rem;color:var(--gray)}
-    .score-stars{color:#f5a623;letter-spacing:1px}
-    section{padding:4.5rem 0}
-    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.4rem);margin-bottom:.6rem}
-    .section-sub{color:var(--gray);max-width:560px;margin-bottom:2.5rem}
-    .apartments-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem}
-    .apt-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s}
-    .apt-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
-    .apt-img{height:220px;background:#ddd;position:relative;overflow:hidden}
-    .apt-img img{width:100%;height:100%;object-fit:cover}
-    .apt-badge{position:absolute;top:12px;left:12px;background:#fff;padding:.3rem .7rem;border-radius:6px;font-size:.8rem;font-weight:600}
-    .apt-body{padding:1.4rem}
-    .apt-body h3{font-size:1.25rem;margin-bottom:.4rem}
-    .apt-body p{color:var(--gray);font-size:.95rem;margin-bottom:1rem}
-    .apt-meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem}
-    .meta-pill{background:var(--light);padding:.25rem .65rem;border-radius:999px;font-size:.8rem;color:var(--gray)}
-    .apt-price{font-weight:700;font-size:1.15rem;margin-bottom:1rem}
-    .apt-price span{font-weight:500;font-size:.9rem;color:var(--gray)}
-    .apt-actions{display:flex;gap:.6rem;flex-wrap:wrap}
-    .btn-sm{padding:.55rem 1rem;font-size:.88rem;border-radius:7px}
-    .btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--dark)}.btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
-    .coming-soon{border:2px dashed #d4cfc8;background:#faf9f7;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:420px;text-align:center;padding:2rem}
-    .coming-soon .icon{font-size:2.5rem;margin-bottom:1rem;opacity:.6}
-    .coming-soon h3{margin-bottom:.5rem}.coming-soon p{color:var(--gray);max-width:240px}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
-    .feature{background:var(--light);padding:1.6rem;border-radius:14px}
-    .feature .icon{font-size:1.8rem;margin-bottom:.8rem}
-    .feature h3{font-size:1.1rem;margin-bottom:.4rem}.feature p{font-size:.95rem;color:var(--gray)}
-    .nearby-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
-    .nearby-card{border:1px solid var(--border);border-radius:14px;overflow:hidden}
-    .nearby-card .img{height:150px;background:#e5e0d8}
-    .nearby-card .body{padding:1.1rem}
-    .nearby-card .time{font-size:.8rem;color:var(--orange);font-weight:600;margin-bottom:.3rem}
-    .nearby-card h3{font-size:1.05rem;margin-bottom:.3rem}.nearby-card p{font-size:.9rem;color:var(--gray)}
-    .cta{background:linear-gradient(135deg,#1a3c3d,#2a5a5c);color:#fff;text-align:center;padding:4rem 1.5rem;border-radius:20px;margin:2rem 0 0}
-    .cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:.8rem}
-    .cta p{opacity:.9;margin-bottom:1.6rem;max-width:480px;margin-left:auto;margin-right:auto}
-    .cta-buttons{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
-    footer{background:#111;color:#bbb;padding:3.5rem 0 2rem;margin-top:4rem;font-size:.95rem}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
-    .footer-brand{color:#fff;font-weight:700;font-size:1.15rem;margin-bottom:.6rem}
-    footer a{color:#bbb;transition:color .2s}footer a:hover{color:#fff}
-    .footer-bottom{border-top:1px solid #333;padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem}
-    .wa-float{position:fixed;bottom:24px;right:24px;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 6px 20px rgba(37,211,102,.4);z-index:99;transition:transform .2s}
-    .wa-float:hover{transform:scale(1.08)}
-    .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer}
-    @media(max-width:800px){nav{display:none}.menu-toggle{display:block}.footer-grid{grid-template-columns:1fr;gap:1.8rem}.hero{min-height:78vh}}
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>4SeasonsApartment · Appartements de vacances à Taverne (Tessin)</title>
+<meta name="description" content="Appartements confortables à Taverne, à quelques minutes de Lugano. Notés 9.0 sur Booking et 5 étoiles sur Airbnb."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--orange:#c45c26;--orange-dark:#a34a1c;--dark:#1a1a1a;--gray:#5c5c5c;--light:#f7f5f2;--white:#fff;--border:#e8e4df}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--dark);background:var(--white);line-height:1.6}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:0 auto}
+.topbar{background:linear-gradient(90deg,#0f3d3e,#1a5c5e);color:#fff;font-size:.85rem;padding:.5rem 0;text-align:center}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;gap:1rem}
+.logo{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:1.15rem}
+.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--orange),#e07a3d);border-radius:10px;display:grid;place-items:center;color:#fff;font-size:1.2rem}
+.logo span{display:block;font-size:.75rem;font-weight:500;color:var(--gray)}
+nav{display:flex;align-items:center;gap:1.5rem}
+nav a{font-size:.95rem;font-weight:500;color:var(--dark);transition:color .2s}
+nav a:hover{color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.7rem 1.4rem;border-radius:8px;font-weight:600;font-size:.95rem;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:var(--orange);color:#fff}.btn-primary:hover{background:var(--orange-dark)}
+.btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.5);color:#fff}.btn-outline:hover{background:rgba(255,255,255,.1)}
+.lang{display:flex;gap:.25rem;font-size:.82rem;font-weight:600}
+.lang a{padding:.25rem .45rem;border-radius:4px;color:var(--gray)}.lang a.active{background:var(--dark);color:#fff}
+.hero{position:relative;min-height:85vh;display:flex;align-items:center;background:linear-gradient(105deg,rgba(20,20,20,.72) 0%,rgba(20,20,20,.35) 55%,rgba(20,20,20,.2) 100%),url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;color:#fff}
+.hero-content{max-width:620px;padding:4rem 0}
+.hero-label{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.9;margin-bottom:1rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.3rem,5vw,3.5rem);line-height:1.15;margin-bottom:1.2rem;font-weight:700}
+.hero p{font-size:1.15rem;opacity:.92;margin-bottom:2rem;max-width:520px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:1.8rem}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.6rem}
+.tag{background:rgba(255,255,255,.15);backdrop-filter:blur(6px);padding:.35rem .85rem;border-radius:999px;font-size:.85rem}
+.scores{background:var(--light);border-bottom:1px solid var(--border);padding:1.5rem 0}
+.scores-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2.5rem}
+.score-item{display:flex;align-items:center;gap:.9rem}
+.score-badge{background:var(--orange);color:#fff;font-weight:700;font-size:1.3rem;width:54px;height:54px;border-radius:12px;display:grid;place-items:center}
+.score-badge.airbnb{background:#ff5a5f}
+.score-text strong{display:block;font-size:1.05rem}.score-text span{font-size:.9rem;color:var(--gray)}
+.score-stars{color:#f5a623;letter-spacing:1px}
+section{padding:4.5rem 0}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.4rem);margin-bottom:.6rem}
+.section-sub{color:var(--gray);max-width:560px;margin-bottom:2.5rem}
+.apartments-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem}
+.apt-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.apt-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.apt-img{height:220px;background:#ddd;position:relative;overflow:hidden}
+.apt-img img{width:100%;height:100%;object-fit:cover}
+.apt-badge{position:absolute;top:12px;left:12px;background:#fff;padding:.3rem .7rem;border-radius:6px;font-size:.8rem;font-weight:600}
+.apt-body{padding:1.4rem}
+.apt-body h3{font-size:1.25rem;margin-bottom:.4rem}
+.apt-body p{color:var(--gray);font-size:.95rem;margin-bottom:1rem}
+.apt-meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem}
+.meta-pill{background:var(--light);padding:.25rem .65rem;border-radius:999px;font-size:.8rem;color:var(--gray)}
+.apt-price{font-weight:700;font-size:1.15rem;margin-bottom:1rem}
+.apt-price span{font-weight:500;font-size:.9rem;color:var(--gray)}
+.apt-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn-sm{padding:.55rem 1rem;font-size:.88rem;border-radius:7px}
+.btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--dark)}.btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+.coming-soon{border:2px dashed #d4cfc8;background:#faf9f7;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:420px;text-align:center;padding:2rem}
+.coming-soon .icon{font-size:2.5rem;margin-bottom:1rem;opacity:.6}
+.coming-soon h3{margin-bottom:.5rem}.coming-soon p{color:var(--gray);max-width:240px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.feature{background:var(--light);padding:1.6rem;border-radius:14px}
+.feature .icon{font-size:1.8rem;margin-bottom:.8rem}
+.feature h3{font-size:1.1rem;margin-bottom:.4rem}.feature p{font-size:.95rem;color:var(--gray)}
+.nearby-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.nearby-card{border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.nearby-card .img{height:150px;background:#e5e0d8}
+.nearby-card .body{padding:1.1rem}
+.nearby-card .time{font-size:.8rem;color:var(--orange);font-weight:600;margin-bottom:.3rem}
+.nearby-card h3{font-size:1.05rem;margin-bottom:.3rem}.nearby-card p{font-size:.9rem;color:var(--gray)}
+.cta{background:linear-gradient(135deg,#1a3c3d,#2a5a5c);color:#fff;text-align:center;padding:4rem 1.5rem;border-radius:20px;margin:2rem 0 0}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:.8rem}
+.cta p{opacity:.9;margin-bottom:1.6rem;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-buttons{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+footer{background:#111;color:#bbb;padding:3.5rem 0 2rem;margin-top:4rem;font-size:.95rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand{color:#fff;font-weight:700;font-size:1.15rem;margin-bottom:.6rem}
+footer a{color:#bbb;transition:color .2s}footer a:hover{color:#fff}
+.footer-bottom{border-top:1px solid #333;padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem}
+.wa-float{position:fixed;bottom:24px;right:24px;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 6px 20px rgba(37,211,102,.4);z-index:99;transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer}
+@media(max-width:800px){nav{display:none}.menu-toggle{display:block}.footer-grid{grid-template-columns:1fr;gap:1.8rem}.hero{min-height:78vh}}
+</style>
 </head>
 <body>
-  <div class="topbar">Preview · Work in progress</div>
-  <header>
-    <div class="container header-inner">
-      <a href="en.html" class="logo"><div class="logo-icon">🏠</div><div>4SeasonsApartment<span>Rentals · Ticino · Taverne</span></div></a>
-      <nav>
-        <a href="#apartments">Apartments</a>
-        <a href="#services">Services</a>
-        <a href="#nearby">Nearby</a>
-        <a href="#book" class="btn btn-primary">Book</a>
-        <div class="lang">
-          <a href="index.html">IT</a>
-          <a href="en.html" class="active">EN</a>
-          <a href="fr.html">FR</a>
-          <a href="de.html">DE</a>
-        </div>
-      </nav>
-      <button class="menu-toggle" aria-label="Menu">☰</button>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-label">Taverne · Ticino · Switzerland</div>
-        <h1>Your stay in Taverne, all year round.</h1>
-        <p>Comfortable apartments just minutes from Lugano. Comfort, convenient location and easy booking.</p>
-        <div class="hero-buttons">
-          <a href="#apartments" class="btn btn-primary">View apartments</a>
-          <a href="#book" class="btn btn-outline">Request a booking</a>
-        </div>
-        <div class="hero-tags">
-          <span class="tag">Taverne · Ticino</span>
-          <span class="tag">IT · EN · FR · DE</span>
-          <span class="tag">Booking calendar</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="scores">
-    <div class="container scores-inner">
-      <div class="score-item">
-        <div class="score-badge">9.0</div>
-        <div class="score-text"><strong>Booking.com</strong><span class="score-stars">★★★★★</span><span>Wonderful · 20 reviews</span></div>
-      </div>
-      <div class="score-item">
-        <div class="score-badge airbnb">5.0</div>
-        <div class="score-text"><strong>Airbnb</strong><span class="score-stars">★★★★★</span><span>5 stars · 6 reviews</span></div>
-      </div>
-      <div style="display:flex;gap:.7rem;flex-wrap:wrap">
-        <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View on Booking →</a>
-        <a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on Airbnb →</a>
-      </div>
-    </div>
-  </div>
-
-  <section id="apartments">
-    <div class="container">
-      <h2 class="section-title">Our apartments</h2>
-      <p class="section-sub">Two apartments available in Taverne. A third one is coming in October 2026.</p>
-      <div class="apartments-grid">
-        <article class="apt-card">
-          <div class="apt-img">
-            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Two-bedroom apartment" />
-            <span class="apt-badge">2 bedrooms</span>
-          </div>
-          <div class="apt-body">
-            <h3>Two-bedroom apartment</h3>
-            <p>Spacious and bright, with two bedrooms, living room and fully equipped kitchen. Ideal for families or small groups.</p>
-            <div class="apt-meta">
-              <span class="meta-pill">Up to 4 guests</span><span class="meta-pill">2 bedrooms</span><span class="meta-pill">Wi-Fi</span><span class="meta-pill">Kitchen</span><span class="meta-pill">Parking</span>
-            </div>
-            <div class="apt-price">Price on request <span>/ night</span></div>
-            <div class="apt-actions">
-              <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" class="btn btn-primary btn-sm">Book on Booking</a>
-              <a href="#book" class="btn btn-ghost btn-sm">Request info</a>
-            </div>
-          </div>
-        </article>
-        <article class="apt-card">
-          <div class="apt-img">
-            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Deluxe one-bedroom apartment" />
-            <span class="apt-badge">1 bedroom</span>
-          </div>
-          <div class="apt-body">
-            <h3>Deluxe one-bedroom apartment</h3>
-            <p>Cozy and refined, with a double bedroom, living area and kitchen. Perfect for couples looking for comfort and privacy.</p>
-            <div class="apt-meta">
-              <span class="meta-pill">2 guests</span><span class="meta-pill">1 bedroom</span><span class="meta-pill">Double bed</span><span class="meta-pill">Wi-Fi</span><span class="meta-pill">Kitchen</span>
-            </div>
-            <div class="apt-price">Price on request <span>/ night</span></div>
-            <div class="apt-actions">
-              <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" class="btn btn-primary btn-sm">Book on Booking</a>
-              <a href="#book" class="btn btn-ghost btn-sm">Request info</a>
-            </div>
-          </div>
-        </article>
-        <article class="apt-card coming-soon">
-          <div class="icon">🚧</div>
-          <h3>New apartment</h3>
-          <p>Coming in October 2026. We are preparing the third apartment.</p>
-          <span class="meta-pill" style="margin-top:1rem">Coming soon</span>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" style="background:var(--light)">
-    <div class="container">
-      <h2 class="section-title">Services & comfort</h2>
-      <p class="section-sub">Everything you need to feel at home from day one.</p>
-      <div class="features">
-        <div class="feature"><div class="icon">📶</div><h3>Free Wi-Fi</h3><p>Stable connection for work and streaming.</p></div>
-        <div class="feature"><div class="icon">🍳</div><h3>Fully equipped kitchen</h3><p>Complete kitchen in every apartment.</p></div>
-        <div class="feature"><div class="icon">🅿️</div><h3>Parking</h3><p>Private parking available.</p></div>
-        <div class="feature"><div class="icon">❄️</div><h3>Air conditioning</h3><p>Comfort in every season.</p></div>
-        <div class="feature"><div class="icon">🧼</div><h3>Linen</h3><p>Bed linen and towels available.</p></div>
-        <div class="feature"><div class="icon">📍</div><h3>Convenient location</h3><p>Just minutes from Lugano and the motorways.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="nearby">
-    <div class="container">
-      <h2 class="section-title">Things to do nearby</h2>
-      <p class="section-sub">Ideas just minutes from Taverne to make the most of your stay in Ticino.</p>
-      <div class="nearby-grid">
-        <div class="nearby-card"><div class="img" style="background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80') center/cover"></div><div class="body"><div class="time">15–20 min</div><h3>Lake Lugano</h3><p>Waterfront, boat trips and historic centre.</p></div></div>
-        <div class="nearby-card"><div class="img" style="background:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80') center/cover"></div><div class="body"><div class="time">25–35 min</div><h3>Monte Brè / San Salvatore</h3><p>Panoramic views of the Alps and Lake Ceresio.</p></div></div>
-        <div class="nearby-card"><div class="img" style="background:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80') center/cover"></div><div class="body"><div class="time">15 min</div><h3>Swissminiatur (Melide)</h3><p>Miniature park of Switzerland.</p></div></div>
-        <div class="nearby-card"><div class="img" style="background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80') center/cover"></div><div class="body"><div class="time">25 min</div><h3>Gandria & Olive Trail</h3><p>Picturesque village and scenic walk.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="cta" id="book">
-      <h2>Ready to book?</h2>
-      <p>Book directly on Booking or Airbnb, or contact us for special requests.</p>
-      <div class="cta-buttons">
-        <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" rel="noopener" class="btn btn-primary">Book on Booking</a>
-        <a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank" rel="noopener" class="btn btn-outline">Book on Airbnb</a>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">4SeasonsApartment</div>
-          <p>Via Bicentenario 24<br>6807 Taverne (TI), Switzerland</p>
-          <p style="margin-top:.8rem">Holiday apartments in Taverne, just minutes from Lugano.</p>
-        </div>
-        <div>
-          <strong style="color:#fff;display:block;margin-bottom:.8rem">Useful links</strong>
-          <p><a href="#apartments">Apartments</a></p>
-          <p><a href="#nearby">Nearby</a></p>
-          <p><a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank">Booking.com</a></p>
-          <p><a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank">Airbnb</a></p>
-        </div>
-        <div>
-          <strong style="color:#fff;display:block;margin-bottom:.8rem">Contact</strong>
-          <p>WhatsApp available</p>
-          <p>Email: info@4seasonsapartment.ch</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 4SeasonsApartment · Taverne (TI)</span>
-        <span>IT · EN · FR · DE</span>
-      </div>
-    </div>
-  </footer>
-  <a href="https://wa.me/41791234567" class="wa-float" title="WhatsApp" target="_blank" rel="noopener">💬</a>
+<div class="topbar">Aperçu · Version de travail</div>
+<header>
+<div class="container header-inner">
+<a href="fr.html" class="logo"><div class="logo-icon">🏠</div><div>4SeasonsApartment<span>Locations · Tessin · Taverne</span></div></a>
+<nav>
+<a href="#appartements">Appartements</a>
+<a href="#services">Services</a>
+<a href="#environs">Environs</a>
+<a href="#reserver" class="btn btn-primary">Réserver</a>
+<div class="lang">
+<a href="index.html">IT</a>
+<a href="en.html">EN</a>
+<a href="fr.html" class="active">FR</a>
+<a href="de.html">DE</a>
+</div>
+</nav>
+<button class="menu-toggle" aria-label="Menu">☰</button>
+</div>
+</header>
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-label">Taverne · Tessin · Suisse</div>
+<h1>Votre séjour à Taverne, toute l’année.</h1>
+<p>Appartements confortables à quelques minutes de Lugano. Confort, emplacement pratique et réservation simple.</p>
+<div class="hero-buttons">
+<a href="#appartements" class="btn btn-primary">Voir les appartements</a>
+<a href="#reserver" class="btn btn-outline">Demander une réservation</a>
+</div>
+<div class="hero-tags">
+<span class="tag">Taverne · Tessin</span>
+<span class="tag">IT · EN · FR · DE</span>
+<span class="tag">Calendrier de réservation</span>
+</div>
+</div>
+</div>
+</section>
+<div class="scores">
+<div class="container scores-inner">
+<div class="score-item">
+<div class="score-badge">9.0</div>
+<div class="score-text"><strong>Booking.com</strong><span class="score-stars">★★★★★</span><span>Formidable · 20 avis</span></div>
+</div>
+<div class="score-item">
+<div class="score-badge airbnb">5.0</div>
+<div class="score-text"><strong>Airbnb</strong><span class="score-stars">★★★★★</span><span>5 étoiles · 6 avis</span></div>
+</div>
+<div style="display:flex;gap:.7rem;flex-wrap:wrap">
+<a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Voir sur Booking →</a>
+<a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Voir sur Airbnb →</a>
+</div>
+</div>
+</div>
+<section id="appartements">
+<div class="container">
+<h2 class="section-title">Nos appartements</h2>
+<p class="section-sub">Deux appartements disponibles à Taverne. Un troisième arrivera en octobre 2026.</p>
+<div class="apartments-grid">
+<article class="apt-card">
+<div class="apt-img">
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Appartement 2 chambres"/>
+<span class="apt-badge">2 chambres</span>
+</div>
+<div class="apt-body">
+<h3>Appartement 2 chambres</h3>
+<p>Spacieux et lumineux, avec deux chambres, salon et cuisine équipée. Idéal pour les familles ou petits groupes.</p>
+<div class="apt-meta">
+<span class="meta-pill">Jusqu’à 4 personnes</span><span class="meta-pill">2 chambres</span><span class="meta-pill">Wi-Fi</span><span class="meta-pill">Cuisine</span><span class="meta-pill">Parking</span>
+</div>
+<div class="apt-price">Prix sur demande <span>/ nuit</span></div>
+<div class="apt-actions">
+<a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" class="btn btn-primary btn-sm">Réserver sur Booking</a>
+<a href="#reserver" class="btn btn-ghost btn-sm">Demander des infos</a>
+</div>
+</div>
+</article>
+<article class="apt-card">
+<div class="apt-img">
+<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Appartement Deluxe 1 chambre"/>
+<span class="apt-badge">1 chambre</span>
+</div>
+<div class="apt-body">
+<h3>Appartement Deluxe 1 chambre</h3>
+<p>Accueillant et raffiné, avec chambre double, salon et cuisine. Parfait pour les couples recherchant confort et intimité.</p>
+<div class="apt-meta">
+<span class="meta-pill">2 personnes</span><span class="meta-pill">1 chambre</span><span class="meta-pill">Lit double</span><span class="meta-pill">Wi-Fi</span><span class="meta-pill">Cuisine</span>
+</div>
+<div class="apt-price">Prix sur demande <span>/ nuit</span></div>
+<div class="apt-actions">
+<a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" class="btn btn-primary btn-sm">Réserver sur Booking</a>
+<a href="#reserver" class="btn btn-ghost btn-sm">Demander des infos</a>
+</div>
+</div>
+</article>
+<article class="apt-card coming-soon">
+<div class="icon">🚧</div>
+<h3>Nouvel appartement</h3>
+<p>À venir en octobre 2026. Nous préparons le troisième logement.</p>
+<span class="meta-pill" style="margin-top:1rem">Bientôt disponible</span>
+</article>
+</div>
+</div>
+</section>
+<section id="services" style="background:var(--light)">
+<div class="container">
+<h2 class="section-title">Services et confort</h2>
+<p class="section-sub">Tout le nécessaire pour vous sentir chez vous dès le premier jour.</p>
+<div class="features">
+<div class="feature"><div class="icon">📶</div><h3>Wi-Fi gratuit</h3><p>Connexion stable pour le travail et le streaming.</p></div>
+<div class="feature"><div class="icon">🍳</div><h3>Cuisine équipée</h3><p>Cuisine complète dans chaque appartement.</p></div>
+<div class="feature"><div class="icon">🅿️</div><h3>Parking</h3><p>Parking privé disponible.</p></div>
+<div class="feature"><div class="icon">❄️</div><h3>Climatisation</h3><p>Confort en toute saison.</p></div>
+<div class="feature"><div class="icon">🧼</div><h3>Linge de maison</h3><p>Draps et serviettes disponibles.</p></div>
+<div class="feature"><div class="icon">📍</div><h3>Emplacement pratique</h3><p>À quelques minutes de Lugano et des autoroutes.</p></div>
+</div>
+</div>
+</section>
+<section id="environs">
+<div class="container">
+<h2 class="section-title">Que faire à proximité</h2>
+<p class="section-sub">Idées à quelques minutes de Taverne pour profiter de votre séjour au Tessin.</p>
+<div class="nearby-grid">
+<div class="nearby-card"><div class="img" style="background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80') center/cover"></div><div class="body"><div class="time">15–20 min</div><h3>Lac de Lugano</h3><p>Quai, bateaux et centre historique.</p></div></div>
+<div class="nearby-card"><div class="img" style="background:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80') center/cover"></div><div class="body"><div class="time">25–35 min</div><h3>Monte Brè / San Salvatore</h3><p>Panoramas sur les Alpes et le Ceresio.</p></div></div>
+<div class="nearby-card"><div class="img" style="background:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80') center/cover"></div><div class="body"><div class="time">15 min</div><h3>Swissminiatur (Melide)</h3><p>Parc miniature de la Suisse.</p></div></div>
+<div class="nearby-card"><div class="img" style="background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80') center/cover"></div><div class="body"><div class="time">25 min</div><h3>Gandria & sentier de l’olivier</h3><p>Village pittoresque et promenade.</p></div></div>
+</div>
+</div>
+</section>
+<div class="container">
+<div class="cta" id="reserver">
+<h2>Prêt à réserver ?</h2>
+<p>Réservez directement sur Booking ou Airbnb, ou contactez-nous pour des demandes particulières.</p>
+<div class="cta-buttons">
+<a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" rel="noopener" class="btn btn-primary">Réserver sur Booking</a>
+<a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank" rel="noopener" class="btn btn-outline">Réserver sur Airbnb</a>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">4SeasonsApartment</div>
+<p>Via Bicentenario 24<br>6807 Taverne (TI), Suisse</p>
+<p style="margin-top:.8rem">Appartements de vacances à Taverne, à quelques minutes de Lugano.</p>
+</div>
+<div>
+<strong style="color:#fff;display:block;margin-bottom:.8rem">Liens utiles</strong>
+<p><a href="#appartements">Appartements</a></p>
+<p><a href="#environs">Environs</a></p>
+<p><a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank">Booking.com</a></p>
+<p><a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank">Airbnb</a></p>
+</div>
+<div>
+<strong style="color:#fff;display:block;margin-bottom:.8rem">Contact</strong>
+<p>WhatsApp disponible</p>
+<p>Email: info@4seasonsapartment.ch</p>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 4SeasonsApartment · Taverne (TI)</span>
+<span>IT · EN · FR · DE</span>
+</div>
+</div>
+</footer>
+<a href="https://wa.me/41791234567" class="wa-float" title="WhatsApp" target="_blank" rel="noopener">💬</a>
 </body>
 </html>
