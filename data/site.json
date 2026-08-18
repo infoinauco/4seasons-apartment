@@ -1,22 +1,22 @@
 {
-  "booking_score": "9.0",
-  "booking_reviews": 20,
-  "booking_url": "https://www.booking.com/hotel/ch/4-seasons-apartment.html",
-  "airbnb_score": "5.0",
   "airbnb_reviews": 6,
-  "airbnb_url": "https://www.airbnb.com/rooms/1204346464214618523",
-  "whatsapp": "41791234567",
-  "email": "info@4seasonsapartment.ch",
-  "address": "Via Bicentenario 24, 6807 Taverne (TI)",
-  "hero_image": "",
+  "booking_url": "no",
   "apt_2bed": {
     "image": "",
-    "guests": "4",
-    "price": ""
+    "guests": "3",
+    "price": "125"
   },
+  "booking_score": "9.0",
   "apt_deluxe": {
-    "image": "",
+    "image": "/images/foto-salotto-ok.png",
     "guests": "2",
-    "price": ""
-  }
+    "price": "110"
+  },
+  "whatsapp": "41798325515",
+  "address": "Via Bicentenario 24, 6807 Taverne (TI)",
+  "booking_reviews": 20,
+  "hero_image": "",
+  "airbnb_url": "no",
+  "email": "infoinauco@gmail.com",
+  "airbnb_score": "5.0"
 }
