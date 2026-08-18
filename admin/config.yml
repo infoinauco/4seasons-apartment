@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: it
+display_url: https://4seasonsapartment.netlify.app
+logo_url: /admin
+
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: settings
+    label: Impostazioni e foto
+    files:
+      - name: site
+        label: Sito e appartamenti
+        file: data/site.json
+        fields:
+          - { label: Punteggio Booking, name: booking_score, widget: string }
+          - { label: Recensioni Booking, name: booking_reviews, widget: number }
+          - { label: Link Booking, name: booking_url, widget: string }
+          - { label: Punteggio Airbnb, name: airbnb_score, widget: string }
+          - { label: Recensioni Airbnb, name: airbnb_reviews, widget: number }
+          - { label: Link Airbnb, name: airbnb_url, widget: string }
+          - { label: WhatsApp (solo numeri, es. 41791234567), name: whatsapp, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Indirizzo, name: address, widget: string }
+          - { label: Foto principale (hero), name: hero_image, widget: image, required: false }
+          - label: Appartamento 2 camere
+            name: apt_2bed
+            widget: object
+            fields:
+              - { label: Foto, name: image, widget: image, required: false }
+              - { label: Ospiti, name: guests, widget: string }
+              - { label: Prezzo, name: price, widget: string }
+          - label: Appartamento Deluxe 1 camera
+            name: apt_deluxe
+            widget: object
+            fields:
+              - { label: Foto, name: image, widget: image, required: false }
+              - { label: Ospiti, name: guests, widget: string }
+              - { label: Prezzo, name: price, widget: string }

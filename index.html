@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4SeasonsApartment · Affitti a Taverne (Ticino)</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <meta name="description" content="Appartamenti accoglienti a Taverne, a pochi minuti da Lugano. Valutati 9.0 su Booking e 5 stelle su Airbnb." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -173,7 +174,7 @@
   <div class="scores">
     <div class="container scores-inner">
       <div class="score-item">
-        <div class="score-badge">9.0</div>
+        <div class="score-badge" data-booking-score>9.0</div>
         <div class="score-text">
           <strong>Booking.com</strong>
           <span class="score-stars">★★★★★</span>
@@ -181,7 +182,7 @@
         </div>
       </div>
       <div class="score-item">
-        <div class="score-badge airbnb">5.0</div>
+        <div class="score-badge airbnb" data-airbnb-score>5.0</div>
         <div class="score-text">
           <strong>Airbnb</strong>
           <span class="score-stars">★★★★★</span>
@@ -189,8 +190,8 @@
         </div>
       </div>
       <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
-        <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Vedi su Booking →</a>
-        <a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Vedi su Airbnb →</a>
+        <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-booking-link>Vedi su Booking →</a>
+        <a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-airbnb-link>Vedi su Airbnb →</a>
       </div>
     </div>
   </div>
@@ -202,7 +203,7 @@
       <div class="apartments-grid">
         <article class="apt-card">
           <div class="apt-img">
-            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Appartamento 2 camera da letto" />
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Appartamento 2 camera da letto" data-apt-2bed-img />
             <span class="apt-badge">2 camere da letto</span>
           </div>
           <div class="apt-body">
@@ -217,7 +218,7 @@
             </div>
             <div class="apt-price">Prezzo su richiesta <span>/ notte</span></div>
             <div class="apt-actions">
-              <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" class="btn btn-primary btn-sm">Prenota su Booking</a>
+              <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" class="btn btn-primary btn-sm" data-booking-link>Prenota su Booking</a>
               <a href="#prenota" class="btn btn-ghost btn-sm">Richiedi info</a>
             </div>
           </div>
@@ -225,7 +226,7 @@
 
         <article class="apt-card">
           <div class="apt-img">
-            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Appartamento Deluxe 1 camera da letto" />
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Appartamento Deluxe 1 camera da letto" data-apt-deluxe-img />
             <span class="apt-badge">1 camera da letto</span>
           </div>
           <div class="apt-body">
@@ -240,7 +241,7 @@
             </div>
             <div class="apt-price">Prezzo su richiesta <span>/ notte</span></div>
             <div class="apt-actions">
-              <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" class="btn btn-primary btn-sm">Prenota su Booking</a>
+              <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" class="btn btn-primary btn-sm" data-booking-link>Prenota su Booking</a>
               <a href="#prenota" class="btn btn-ghost btn-sm">Richiedi info</a>
             </div>
           </div>
@@ -301,8 +302,8 @@
       <h2>Pronto a prenotare?</h2>
       <p>Prenota direttamente su Booking o Airbnb, oppure contattaci per richieste particolari.</p>
       <div class="cta-buttons">
-        <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" rel="noopener" class="btn btn-primary">Prenota su Booking</a>
-        <a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank" rel="noopener" class="btn btn-outline">Prenota su Airbnb</a>
+        <a href="https://www.booking.com/hotel/ch/4-seasons-apartment.html" target="_blank" rel="noopener" class="btn btn-primary" data-booking-link>Prenota su Booking</a>
+        <a href="https://www.airbnb.com/rooms/1204346464214618523" target="_blank" rel="noopener" class="btn btn-outline" data-airbnb-link>Prenota su Airbnb</a>
       </div>
     </div>
   </div>
@@ -335,6 +336,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/41791234567" class="wa-float" title="WhatsApp" target="_blank" rel="noopener">💬</a>
+  <a href="https://wa.me/41791234567" class="wa-float" title="WhatsApp" target="_blank" rel="noopener" data-whatsapp>💬</a>
+  <script src="js/content.js"></script>
 </body>
 </html>

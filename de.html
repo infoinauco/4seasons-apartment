@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>4SeasonsApartment · Ferienwohnungen in Taverne (Tessin)</title>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <meta name="description" content="Komfortable Wohnungen in Taverne, nur wenige Minuten von Lugano. Bewertung 9.0 auf Booking und 5 Sterne auf Airbnb."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -131,11 +132,11 @@ footer a{color:#bbb;transition:color .2s}footer a:hover{color:#fff}
 <div class="scores">
 <div class="container scores-inner">
 <div class="score-item">
-<div class="score-badge">9.0</div>
+<div class="score-badge" data-booking-score>9.0</div>
 <div class="score-text"><strong>Booking.com</strong><span class="score-stars">★★★★★</span><span>Wunderbar · 20 Bewertungen</span></div>
 </div>
 <div class="score-item">
-<div class="score-badge airbnb">5.0</div>
+<div class="score-badge airbnb" data-airbnb-score>5.0</div>
 <div class="score-text"><strong>Airbnb</strong><span class="score-stars">★★★★★</span><span>5 Sterne · 6 Bewertungen</span></div>
 </div>
 <div style="display:flex;gap:.7rem;flex-wrap:wrap">
@@ -151,7 +152,7 @@ footer a{color:#bbb;transition:color .2s}footer a:hover{color:#fff}
 <div class="apartments-grid">
 <article class="apt-card">
 <div class="apt-img">
-<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="2-Zimmer-Wohnung"/>
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="2-Zimmer-Wohnung" data-apt-2bed-img/>
 <span class="apt-badge">2 Schlafzimmer</span>
 </div>
 <div class="apt-body">
@@ -169,7 +170,7 @@ footer a{color:#bbb;transition:color .2s}footer a:hover{color:#fff}
 </article>
 <article class="apt-card">
 <div class="apt-img">
-<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Deluxe 1-Zimmer-Wohnung"/>
+<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Deluxe 1-Zimmer-Wohnung" data-apt-deluxe-img/>
 <span class="apt-badge">1 Schlafzimmer</span>
 </div>
 <div class="apt-body">
@@ -257,6 +258,7 @@ footer a{color:#bbb;transition:color .2s}footer a:hover{color:#fff}
 </div>
 </div>
 </footer>
-<a href="https://wa.me/41791234567" class="wa-float" title="WhatsApp" target="_blank" rel="noopener">💬</a>
+<a href="https://wa.me/41791234567" class="wa-float" title="WhatsApp" target="_blank" rel="noopener" data-whatsapp>💬</a>
+<script src="js/content.js"></script>
 </body>
 </html>
